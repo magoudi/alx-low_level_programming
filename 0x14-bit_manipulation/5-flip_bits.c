@@ -1,20 +1,25 @@
 #include "main.h"
 
 /**
- * flip_bits - adfb
- * @n: egfg
- * @m: aerg
- * Return: sdfg
+ * flip_bits - counts the number of bits to change
+ * to get from one number to another
+ * @n: first number
+ * @m: second number
+ *
+ * Return: number of bits to change
  */
-
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int x = 0;
+	int a, countbit = 0;
+	unsigned long int current;
+	unsigned long int exclusive = n ^ m;
 
-	for (unsigned int i = 0; i < sizeof(n) * 8; i++)
+	for (a = 63; a >= 0; a--)
 	{
-		if ((n & 1L << i) != (m & 1L << i))
-			x++;
+		current = exclusive >> a;
+		if (current & 1)
+			countbit++;
 	}
-	return (x);
+	return (countbit);
 }
+
