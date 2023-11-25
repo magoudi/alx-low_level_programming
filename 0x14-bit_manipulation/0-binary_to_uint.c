@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * binary_to_unit - changes binary to decimal
+ * binary_to_uint - sdfgj
  * @b: string
  * Return: n
  */
