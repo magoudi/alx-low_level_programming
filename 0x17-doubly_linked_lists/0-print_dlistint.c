@@ -8,7 +8,7 @@
 
 size_t print_dlistint(const dlistint_t *h)
 {
-	int size = 1;
+	size_t size = 1;
 	dlistint_t *current = h->next;
 
 	printf("%d\n", h->n);
