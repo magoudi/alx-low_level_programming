@@ -3,6 +3,7 @@
 /**
  * free_dlistint - afjgnajfgnjdngkjan
  * @head: sjfgnfjnjnrf
+ * Return: na da tfyug
  */
 
 void free_dlistint(dlistint_t *head)
