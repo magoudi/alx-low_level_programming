@@ -12,12 +12,11 @@ size_t dlistint_len(const dlistint_t *h)
 		return (0);
 	else
 	{
-		size_t size = 1;
-		dlistint_t *current = h->next;
+		size_t size = 0;
 
-		while (current != NULL)
+		while (h != NULL)
 		{
-			current = current->next;
+			h = h->next;
 			size++;
 		}
 		return (size);
