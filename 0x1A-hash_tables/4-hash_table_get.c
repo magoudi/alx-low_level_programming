@@ -1,5 +1,12 @@
 #include "hash_tables.h"
 
+/**
+ * hash_table_get - sdgnbjdnsfbvndmf
+ * @ht: xjvnsdnvskjncf
+ * @key: djbnvdjnfgngf
+ * Return: vnsdfjvnfvnc
+ */
+
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *current;
