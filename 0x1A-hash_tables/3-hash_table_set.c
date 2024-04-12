@@ -16,10 +16,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int index;
 
 	if (strlen(key) == 0)
-		return 0;
+		return (0);
 
 	index = key_index((unsigned char *)keycpy, ht->size);
-	
+
 	newnode->key = keycpy;
 	newnode->value = valcpy;
 
@@ -33,5 +33,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		newnode->next = ht->array[index];
 		(ht->array[index]) = newnode;
 	}
-	return 1;
+	return (1);
 }
