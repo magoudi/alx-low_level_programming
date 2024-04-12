@@ -26,7 +26,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	check = ht->array[index];
 	while (check)
 	{
-		if (check->key == key)
+		if (!strcmp(check->key, key))
 		{
 			check->value = valcpy;
 			return (1);
