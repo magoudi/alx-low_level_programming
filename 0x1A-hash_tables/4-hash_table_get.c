@@ -5,7 +5,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *current;
 	int index;
 
-	if (!key)
+	if (!key || !ht)
 		return (NULL);
 
 	index = key_index((unsigned char *)key, ht->size);
