@@ -29,7 +29,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (check->key == key)
 		{
 			free(check->value);
-			check->value = balcpy;
+			check->value = valcpy;
 			return (1);
 		}
 		check = check->next;
