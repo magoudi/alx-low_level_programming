@@ -36,15 +36,15 @@ int binary_search(int *array, size_t size, int value)
 	else if (array[(size - 1) / 2] < value)
 	{
 		ret = binary_search(array + (int)ceil((double)size / 2),
-							ceil((double)(size - 1) / 2), value);
+							(size_t)ceil((double)(size - 1) / 2), value);
 		if (ret == -1)
 			return (-1);
 		else
-			return (ret + ceil((double)(size - 1) / 2));
+			return (ret + (int)ceil((double)(size - 1) / 2));
 	}
 	else
 	{
-		ret = binary_search(array, ((size - 1) / 2), value);
+		ret = binary_search(array, (size_t)((size - 1) / 2), value);
 		return (ret);
 	}
 }
