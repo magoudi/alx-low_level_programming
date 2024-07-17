@@ -10,7 +10,7 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i = 0;
+	size_t i, newsize;
 	int ret = 0;
 
 	if (array == NULL)
@@ -35,8 +35,8 @@ int binary_search(int *array, size_t size, int value)
 		return ((size - 1) / 2);
 	else if (array[(size - 1) / 2] < value)
 	{
-		ret = binary_search(array + (int)ceil((double)size / 2),\
-										 (size_t)ceil((double)(size - 1) / 2), value);
+		newsize = (size_t)ceil((double)(size - 1) / 2);
+		ret = binary_search(array + (int)ceil((double)size / 2), newsize, value);
 		if (ret == -1)
 			return (-1);
 		else
