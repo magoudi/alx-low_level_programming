@@ -1,50 +1,52 @@
 #include "search_algos.h"
 
 /**
- * binary_search - jdsngjanergn wrnf
- * @array: sfgasrgvasfgv
- * @size: kgdnflernsgdlfn
- * @value: snglarnsdgjlnerg
- * Return: sjnvnfcwnflsncslgnf
+ * binary_search - Searches for a value in a sorted array using binary search.
+ * @array: Pointer to the first element of the array to search in.
+ * @size: Number of elements in the array.
+ * @value: Value to search for.
+ * Return: Index where the value is located, or -1 if the value is not found.
  */
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i, newsize;
-	int ret = 0;
+	size_t i, mid;
+	int ret;
 
 	if (array == NULL)
 		return (-1);
 
 	printf("Searching in array: ");
-	for (i = 0; i < size - 1; i++)
+	for (i = 0; i < size; i++)
 	{
-		printf("%d, ", array[i]);
+		if (i > 0)
+			printf(", ");
+		printf("%d", array[i]);
 	}
-	printf("%d\n", array[size - 1]);
+	printf("\n");
 
 	if (size == 1)
 	{
-		if (array[0] == value)
-			return (1);
-		else
-			return (-1);
+	if (array[0] == value)
+	return (0);
+	else
+	return (-1);
 	}
 
-	if (array[(size - 1) / 2] == value)
-		return ((size - 1) / 2);
-	else if (array[(size - 1) / 2] < value)
+	mid = (size - 1) / 2;
+
+	if (array[mid] == value)
+	return (mid);
+	else if (array[mid] < value)
 	{
-		newsize = (size_t)ceil((double)(size - 1) / 2);
-		ret = binary_search(array + (int)ceil((double)size / 2), newsize, value);
-		if (ret == -1)
-			return (-1);
-		else
-			return (ret + (int)ceil((double)(size - 1) / 2));
+	ret = binary_search(array + mid + 1, size - mid - 1, value);
+	if (ret == -1)
+	return (-1);
+	else
+	return (mid + 1 + ret);
 	}
 	else
 	{
-		ret = binary_search(array, (size_t)((size - 1) / 2), value);
-		return (ret);
+	return (binary_search(array, mid, value));
 	}
 }
