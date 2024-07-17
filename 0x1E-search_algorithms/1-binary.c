@@ -35,8 +35,8 @@ int binary_search(int *array, size_t size, int value)
 		return ((size - 1) / 2);
 	else if (array[(size - 1) / 2] < value)
 	{
-		ret = binary_search(array + (int)ceil((double)size / 2),
-							(size_t)ceil((double)(size - 1) / 2), value);
+		ret = binary_search(array + (int)ceil((double)size / 2),\
+										 (size_t)ceil((double)(size - 1) / 2), value);
 		if (ret == -1)
 			return (-1);
 		else
